@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辽宁师范大学生命科学学院老师评价</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 3px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>辽宁师范大学生命科学学院老师评价</h1>
+        <textarea id="commentInput" placeholder="请输入您的评价..."></textarea>
+        <button onclick="submitComment()">提交评价</button>
+        <div class="comments" id="comments"></div>
+    </div>
+    <script>
+        function submitComment() {
+            const commentInput = document.getElementById('commentInput');
+            const comments = document.getElementById('comments');
+            const commentText = commentInput.value;
+
+            if (commentText.trim() !== '') {
+                const comment = document.createElement('div');
+                comment.className = 'comment';
+                comment.textContent = commentText;
+                comments.appendChild(comment);
+                commentInput.value = '';
+            } else {
+                alert('请输入评价内容！');
+            }
+        }
+    </script>
+</body>
+</html>
